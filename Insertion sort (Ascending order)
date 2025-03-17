@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int n, j;
+    cin >> n;
+    int a[n]; 
+    for(int i=0; i<n; i++){
+        cin>> a[i]; // taking array input
+    }
+    for(int i=1; i<n; i++){
+        int t = a[i]; // temp for comparing elements
+// Moving elements of arr[0..i-1] that are greater than temp to one position ahead
+     for( j=i-1; j>=0; j--){
+        if(a[j]>t){
+            a[j+1]= a[j];   // Shifting the element to the right 
+
+        }
+        else{
+            break;  // No need to shift further, the correct position for temp is found
+        }
+     }
+     a[j+1]= t;  // Inserting the temp element into its correct position
+
+    }
+    for(int i=0; i<n; i++){
+        cout<< a[i];
+    }
+}
