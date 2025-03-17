@@ -1,2 +1,3 @@
 # DSA
-1.Insertion sort
+1.Insertion sort (ascending)
+2. Insertion sort (descending)
