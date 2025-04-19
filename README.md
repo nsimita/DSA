@@ -6,3 +6,5 @@
 3. Bubble sort and count the total number of swaps
 
 4. Bubble sort and skip even passes
+
+5. BinarySearch (ascending order)
