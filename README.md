@@ -10,3 +10,5 @@
 5. BinarySearch (ascending order)
 
 6. BinarySearch (descending order)
+
+7. CountingTargetAppear (binary search)
