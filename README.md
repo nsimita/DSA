@@ -12,3 +12,5 @@
 6. BinarySearch (descending order)
 
 7. CountingTargetAppear (binary search)
+
+8. Finding Peak Value (mountain array) (using binary search concept)
