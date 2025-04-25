@@ -20,3 +20,5 @@
 10. even numbers in ascending and odd numbers in descending order using LinkedList
 
 11. counting occurances in array
+
+12. print element of highest frequency first with LinkedList
