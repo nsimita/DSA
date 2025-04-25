@@ -24,3 +24,5 @@
 12. print element of highest frequency first with LinkedList
 
 13.  Linear Search to find the first occurrence of the target value in the array.
+
+14.   Linear Search to find the last occurrence of the target value in the array.
