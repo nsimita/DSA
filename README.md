@@ -26,3 +26,6 @@
 13.  Linear Search to find the first occurrence of the target value in the array.
 
 14.   Linear Search to find the last occurrence of the target value in the array.
+
+15.    Linear Search to 
+find how many times the target value occurs in the array.
