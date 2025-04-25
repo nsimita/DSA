@@ -16,3 +16,5 @@
 8. Finding Peak Value (mountain array) (using binary search concept)
 
 9. taking input and display on Linked List
+
+10. even numbers in ascending and odd numbers in descending order using LinkedList
