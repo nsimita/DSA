@@ -32,3 +32,6 @@ negative number in the array. If no negative number is found, print "No negative
 
 16.    Linear Search to 
 find how many times the target value occurs in the array.
+
+17. print mid element of a Singly LinkedList
+
