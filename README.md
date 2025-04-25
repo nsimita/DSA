@@ -18,3 +18,5 @@
 9. taking input and display on Linked List
 
 10. even numbers in ascending and odd numbers in descending order using LinkedList
+
+11. counting occurances in array
