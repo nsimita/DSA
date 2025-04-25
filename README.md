@@ -23,9 +23,12 @@
 
 12. print element of highest frequency first with LinkedList
 
-13.  Linear Search to find the first occurrence of the target value in the array.
+13. Linear Search to find the first 
+negative number in the array. If no negative number is found, print "No negative number". 
 
-14.   Linear Search to find the last occurrence of the target value in the array.
+14.  Linear Search to find the first occurrence of the target value in the array.
 
-15.    Linear Search to 
+15.   Linear Search to find the last occurrence of the target value in the array.
+
+16.    Linear Search to 
 find how many times the target value occurs in the array.
