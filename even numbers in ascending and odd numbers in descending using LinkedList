@@ -1,0 +1,113 @@
+//4 
+#include <iostream>
+using namespace std;
+
+struct list {
+    int data;
+    list *next;
+};
+typedef struct list node;
+
+void print(node *start) {
+    node *temp = start;
+    while (temp != NULL) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    
+}
+
+void insertEnd(node* &start, int val) {
+    node *temp1 = new node();
+    temp1->data = val;
+    temp1->next = NULL;
+
+    if (start == NULL) {
+        start = temp1;
+    } else {
+        node *temp = start;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = temp1;
+    }
+}
+
+node *sortEven(node *start) {
+    node *i, *j;
+    for (i = start; i != NULL; i = i->next) {
+        for (j = i->next; j != NULL; j = j->next) {
+            if (i->data > j->data) {
+                int temp = i->data;
+                i->data = j->data;
+                j->data = temp;
+            }
+        }
+    }
+    return start;
+}
+
+node *sortOdd(node *start) {
+    node *i, *j;
+    for (i = start; i != NULL; i = i->next) {
+        for (j = i->next; j != NULL; j = j->next) {
+            if (i->data < j->data) {
+                int temp = i->data;
+                i->data = j->data;
+                j->data = temp;
+            }
+        }
+    }
+    return start;
+}
+
+node *customSort(node *head) {
+    node *even = NULL, *odd = NULL;
+    node *temp = head;
+
+    while (temp != NULL) {
+        if (temp->data % 2 == 0)
+            insertEnd(even, temp->data);
+        else
+            insertEnd(odd, temp->data);
+        temp = temp->next;
+    }
+
+    even = sortEven(even);
+    odd = sortOdd(odd);
+
+    if (even == NULL) return odd;
+
+    node *p = even;
+    while (p->next != NULL)
+        p = p->next;
+    p->next = odd;
+
+    return even;
+}
+
+int main() {
+    int n, p;
+    node *start = NULL;
+    node *temp, *temp1;
+
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> p;
+        temp1 = new node();
+        temp1->data = p;
+        temp1->next = NULL;
+
+        if (start == NULL) {
+            start = temp1;
+        } else {
+            temp->next = temp1;
+        }
+        temp = temp1;
+    }
+
+    start = customSort(start);
+    print(start);
+
+    return 0;
+}
