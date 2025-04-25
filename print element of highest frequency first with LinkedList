@@ -1,0 +1,89 @@
+#include <iostream>
+using namespace std;
+
+struct list {
+    int data;
+    list *next;
+};
+
+typedef struct list node;
+void print(node *start){
+    node *temp = start;
+    while(temp!= NULL){
+        cout<< temp-> data << " ";
+        temp = temp-> next;
+    }
+}
+void insertEnd(node *&start , int val){
+    node *temp1 = new node();
+    temp1 -> data = val;
+    temp1 -> next = NULL;
+    if(start == NULL){
+        start = temp1;
+    }
+    else{
+        node *temp = start;
+        while (temp-> next != NULL){
+            temp = temp -> next;
+        }
+        temp -> next = temp1;
+    }
+    
+}
+node* customOrder(node *head) {
+    int freq[101] = {0};  
+    node *temp = head;
+
+    
+    while (temp != NULL) {
+        freq[temp->data]++;
+        temp = temp->next;
+    }
+
+
+    int max = 0;
+    for (int i = 0; i <= 100; i++) {
+        if (freq[i] > max) {
+            max = freq[i];
+        }
+    }
+
+   
+    node *temp2 = NULL;
+    for (int f = max; f >= 1; f--) { 
+        for (int val = 0; val <= 100; val++) {
+            if (freq[val] == f) {
+               
+                for (int k = 0; k < f; k++) {
+                    insertEnd(temp2, val);
+                }
+                freq[val] = 0;
+            }
+        }
+    }
+
+    return temp2;
+}
+
+int main() {
+    int n, p;
+    node *start = NULL, *temp, *temp1;
+    
+    cout << "Enter size: ";
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> p;
+        temp1 = new node();
+        temp1->data = p;
+        temp1->next = NULL;
+        if (start == NULL) {
+            start = temp1;
+        } else {
+            temp->next = temp1;
+        }
+        temp = temp1;
+    }
+
+    start = customOrder(start);
+    print(start);
+}
