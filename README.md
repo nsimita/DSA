@@ -14,3 +14,5 @@
 7. CountingTargetAppear (binary search)
 
 8. Finding Peak Value (mountain array) (using binary search concept)
+
+9. taking input and display on Linked List
