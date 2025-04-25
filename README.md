@@ -22,3 +22,5 @@
 11. counting occurances in array
 
 12. print element of highest frequency first with LinkedList
+
+13.  Linear Search to find the first occurrence of the target value in the array.
