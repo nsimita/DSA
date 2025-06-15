@@ -35,5 +35,7 @@ find how many times the target value occurs in the array.
 
 17. print mid element of a Singly LinkedList
 
-18. search pair using linear search  
+18. search pair using linear search
+
+19. stack : array implementation
 
