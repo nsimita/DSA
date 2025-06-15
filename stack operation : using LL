@@ -1,0 +1,83 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int value;
+    struct Node* next;
+};
+
+struct Node* top = NULL;
+
+void push(int data) {
+    struct Node* temp = new Node();
+
+    if (!temp) {
+        cout << "\nHeap Overflow" << endl;
+        exit(1);
+    }
+
+    temp->value = data;
+    temp->next = top;
+    top = temp;
+}
+
+int pop() {
+    struct Node* temp;
+    int data;
+
+    if (top == NULL) {
+        cout << "\nStack Underflow" << endl;
+        exit(1);
+    } else {
+        data = top->value;
+        temp = top;
+        top = top->next;
+        delete temp;  // ✅ Correctly deallocate in C++
+        return data;
+    }
+}
+
+void display() {
+    struct Node* temp = top;
+    cout << "Stack: ";
+    while (temp != NULL) {
+        cout << temp->value << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+int main() {
+    int choice, data;
+
+    while (1) {
+        cout << "\n1. Push  2. Pop  3. Display  4. Exit" << endl;
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                cout << "Enter data: ";
+                cin >> data;
+                push(data);
+                break;
+
+            case 2:
+                cout << "Popped value: " << pop() << endl;
+                break;
+
+            case 3:
+                display();
+                break;
+
+            case 4:
+                cout << "Bye!" << endl;
+                return 0;
+
+            default:
+                cout << "Invalid choice!" << endl;
+        }
+    }
+
+    return 0;
+}
