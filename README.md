@@ -39,3 +39,5 @@ find how many times the target value occurs in the array.
 
 19. stack : array implementation
 
+20. stack operation : using Linked list
+
