@@ -41,3 +41,5 @@ find how many times the target value occurs in the array.
 
 20. stack operation : using Linked list
 
+21. swaps counting in insertion sort
+
