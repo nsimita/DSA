@@ -1,0 +1,23 @@
+ #define SIZE 3
+  int stk[SIZE];
+ int top = -1; // controls array index 
+ 
+ void push(int data){
+     if(top+1 ==SIZE){
+         cout<<"overflow"<<endl;
+     }
+     else{
+         top++;
+         stk[top] =data;
+     }
+ }
+ 
+ void pop(){
+     if(top==-1){
+         cout<<"underflow"<<endl;
+     }
+     else{
+         stk[top]= 0;
+         top--;
+     }
+ }
