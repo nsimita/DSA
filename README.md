@@ -43,3 +43,5 @@ find how many times the target value occurs in the array.
 
 21. swaps counting in insertion sort
 
+22. queue (circular) operations
+
