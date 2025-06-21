@@ -45,3 +45,5 @@ find how many times the target value occurs in the array.
 
 22. queue (circular) operations
 
+23. Take an array of 5 elements. Push all elements into the stack. Pop the elements back into an array. Print the array (it should now be reversed).
+
