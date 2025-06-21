@@ -47,3 +47,5 @@ find how many times the target value occurs in the array.
 
 23. Take an array of 5 elements. Push all elements into the stack. Pop the elements back into an array. Print the array (it should now be reversed).
 
+24.  Count how many elements are currently in the stack. Do not use pop() or alter the stack.
+
