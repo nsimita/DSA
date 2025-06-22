@@ -57,13 +57,7 @@ int main()
 			break;
 
 		case 2: {
-			if(top+1 ==SIZE) {
-				cout<<"overflow"<<endl;
-			}
-			else {
-				top++;
-				a[top] =data;
-			}
+			  pop();
 			break;
 		}
 
