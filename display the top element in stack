@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+
+#define SIZE 5
+
+int a[SIZE];
+int top = -1;
+
+void push(int data) {
+	if (top >= SIZE - 1) {
+		cout << "overflow" << endl;
+	}
+	else {
+		top++;
+		a[top] = data;
+	}
+}
+
+int pop() {
+	int data;
+	if (top == -1) {
+		cout << "underflow" << endl;
+		return -1;  
+	}
+	else {
+		data = a[top];
+		top--;
+		return data;
+	}
+}
+
+void display() {
+	if (top == -1) {
+		cout << "Stack is empty" << endl;
+	}
+	else {
+	     cout <<"Top element is: "<<a[top];
+		cout << endl;
+	}
+}
+
+ 
+  
+
+int main()
+{
+	int ch, data;
+
+	while (true) {
+		cout << "1. push  2. pop  3. display top" << endl;
+		cin >> ch;
+
+		switch (ch) {
+		case 1:
+			cout << "enter data" << endl;
+			cin >> data;
+			push(data);
+			break;
+
+		case 2: {
+			  pop();
+			break;
+		}
+
+		 
+
+		case 3:
+
+			  display();
+			return 0;
+		}
+	}
+
+	return 0;
+}
