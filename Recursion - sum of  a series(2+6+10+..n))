@@ -1,0 +1,22 @@
+ //2+6+10+...+n 
+//f(1) = 2 , f(2) = 2+6 ; f(3)= 2+6+10 -> f(2)+ 4*3-2 -> f(n) = f(n-1)+4*n-2
+#include <iostream>
+using namespace std;
+
+int Series (int n){
+    if (n<=0) return 0; 
+    if(n==1) return 2;
+    return Series(n-1) +4*n-2 ;
+    
+}
+int main()
+{
+    int n;
+    cout<<"enter the number: "<<endl;
+    cin>>n;
+    
+    int s = Series(n);
+    cout <<"the sum of "<<n<<" numbers is- "<<s<<endl;
+
+    return 0;
+}
