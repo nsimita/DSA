@@ -1,0 +1,22 @@
+ //1+4+7+11...+n
+//f(1) = 1 , f(4) = 1+4 ; f(7)=1+4+7 -> f(7) = f(4)+7 = f(n-3)+n
+#include <iostream>
+using namespace std;
+
+int Series (int n){
+    if (n<=0) return 0; 
+    if(n==1) return 1;
+    return Series(n-3) + n;
+    
+}
+int main()
+{
+    int n;
+    cout<<"enter the number: "<<endl;
+    cin>>n;
+    
+    int s = Series(n);
+    cout <<"the sum of "<<n<<" numbers is- "<<s<<endl;
+
+    return 0;
+}
