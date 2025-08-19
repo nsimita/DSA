@@ -1,0 +1,22 @@
+//3+5+7+9...+n
+//f(1) = 3 , f(2) = 3+5 ; f(3)=3+5+7 -> f(3) = f(2)+2*3+1 = f(n-1)+2*n+1
+#include <iostream>
+using namespace std;
+
+int Series (int n){
+    if (n<=0) return 0; 
+    if(n==1) return 3;
+    return Series(n-1)+2*n+1;
+    
+}
+int main()
+{
+    int n;
+    cout<<"enter the number: "<<endl;
+    cin>>n;
+    
+    int s = Series(n);
+    cout <<"the sum of "<<n<<" numbers is- "<<s<<endl;
+
+    return 0;
+}
