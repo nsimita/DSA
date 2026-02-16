@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+void FindMinMax(int a[], int i, int j, int &fmax, int &fmin){
+// we can't return 2 values from a function so 2 variables are passed by their address
+
+if(i==j){
+    fmax= fmin= a[i]; // only one element that's both max and min
+    return ;
+}
+if(i==j-1){ //for 2 elements
+    fmax = max(a[i],a[j]);
+    fmin = min(a[i],a[j]);
+    return;
+}
+int mid = (i+j)/2;
+int gmax, gmin , hmax, hmin; //g for left half, h for right half
+FindMinMax(a, i, mid, gmax, gmin); // left half
+FindMinMax(a, mid+1, j, hmax, hmin); // right half
+fmax = max(gmax, hmax);
+fmin =  min (gmin, hmin); 
+
+}
+
+int main(){
+    int fmax, fmin;
+    int a[] ={7, 17, 34, 14, 9, 88, 23, 56};
+    int n = sizeof(a)/sizeof(a[0]);
+    FindMinMax(a, 0, n-1, fmax, fmin);
+    cout<<"Max : "<<fmax <<" Min :  "<<fmin<<endl;
+
+}
