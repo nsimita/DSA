@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+
+struct list {
+    int data;
+    struct list *next;
+};
+typedef struct list node;
+
+node *start = NULL;  
+
+void display(node *start) {
+    node *temp = start;
+    while (temp != NULL) {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+    cout << "NULL" << endl;
+}
+
+void Deletelast() {
+    if (start == NULL) {
+        cout << "LIST IS EMPTY" << endl;
+        return;
+    }
+
+    if (start->next == NULL) {
+        
+        delete start;
+        start = NULL;
+        return;
+    }
+
+    node *temp = start;
+    node *prev = NULL;
+ 
+    while (temp->next != NULL) {
+        prev = temp;
+        temp = temp->next;
+    }
+
+     
+    prev->next = NULL;
+    delete temp;
+}
+
+void insert(int value) {
+    node *newNode = new node;
+    newNode->data = value;
+    newNode->next = start;
+    start = newNode;
+}
+
+int main() {
+    insert(10);
+    insert(20);
+    insert(30);
+
+   
+    display(start);
+
+    Deletelast();
+
+     
+    display(start);
+
+    return 0;
+}
